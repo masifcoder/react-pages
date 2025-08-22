@@ -1,0 +1,21 @@
+
+
+#homePage,
+#contactPage,
+#aboutPage {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#homePage {
+  background-color: aquamarine;
+}
+
+#aboutPage {
+  background-color: cadetblue;
+}
+#contactPage {
+  background-color: darkgrey;
+}

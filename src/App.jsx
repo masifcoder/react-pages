@@ -11,6 +11,8 @@ import Login from './pages/Login';
 import Notfound from './pages/Notfound';
 import Dashboard from './pages/Dashboard';
 import Logout from './pages/Logout';
+import ProtectedRoutes from './components/ProtectedRoutes';
+import Profile from './pages/Profile';
 
 function App() {
 
@@ -27,7 +29,10 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path='/logout' element={<Logout />} />
           <Route path='/products/:id' element={<Details />} />
-          <Route path='/dashboard' element={<Dashboard />} />
+
+          <Route path='/dashboard' element={ <ProtectedRoutes> <Dashboard /> </ProtectedRoutes>  } />
+          <Route path='/profile' element={ <ProtectedRoutes> <Profile /> </ProtectedRoutes>  } />
+
           <Route path='*' element={<Notfound />} />
         </Routes>
       </div>

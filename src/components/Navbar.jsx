@@ -34,7 +34,7 @@ function Navbar() {
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link to="/dashboard?q=apple" className="nav-link" >
+                            <Link to="/dashboard" className="nav-link" >
                                 Dashboard
                             </Link>
                         </li>

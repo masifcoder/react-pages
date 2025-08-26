@@ -1,5 +1,3 @@
-
-
 #homePage,
 #contactPage,
 #detailsPage,
@@ -19,9 +17,41 @@
 #aboutPage {
   background-color: cadetblue;
 }
+
 #contactPage {
   background-color: darkgrey;
 }
+
 #detailsPage {
   background-color: bisque;
+}
+
+:root {
+  --sidebar-width: 200px;
+}
+
+body {
+  margin: 0;
+}
+
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+aside {
+  width: var(--sidebar-width);
+  background: #f8f9fa;
+  border-right: 1px solid #dee2e6;
+  padding: 1rem;
+}
+
+main {
+  flex: 1;
+  padding: 1rem;
+}
+
+.nav-link {
+  color: #333;
+  margin-bottom: .5rem;
 }

@@ -9,10 +9,15 @@ import Navbar from './components/Navbar';
 import Details from './pages/Details';
 import Login from './pages/Login';
 import Notfound from './pages/Notfound';
-import Dashboard from './pages/Dashboard';
 import Logout from './pages/Logout';
 import ProtectedRoutes from './components/ProtectedRoutes';
 import Profile from './pages/Profile';
+
+
+import DashboardHome from './pages/dashboard/DashboardHome';
+import DashboardLayout from './pages/dashboard/DashboardLayout';
+import Settings from "./pages/dashboard/Settings";
+import Products from "./pages/dashboard/Products";
 
 function App() {
 
@@ -30,7 +35,15 @@ function App() {
           <Route path='/logout' element={<Logout />} />
           <Route path='/products/:id' element={<Details />} />
 
-          <Route path='/dashboard' element={ <ProtectedRoutes> <Dashboard /> </ProtectedRoutes>  } />
+
+          <Route path='/dashboard' element={ <ProtectedRoutes> <DashboardLayout /> </ProtectedRoutes>  } >
+            <Route index element={<DashboardHome />} /> 
+            <Route path='settings' element={<Settings />} />
+            <Route path='products' element={<Products />} />
+          </Route>
+
+
+
           <Route path='/profile' element={ <ProtectedRoutes> <Profile /> </ProtectedRoutes>  } />
 
           <Route path='*' element={<Notfound />} />

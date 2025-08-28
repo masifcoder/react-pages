@@ -1,12 +1,15 @@
-import { useState } from "react"
+import { useState, useContext } from "react"
 import { useNavigate } from "react-router-dom";
 
-
+import AuthContext from "../context/AuthContext";
 
 const Login = () => {
     const [email, setEmail] = useState("");
     const [pwd, setPwd] = useState("");
     const [error, setError] = useState(false);
+
+    const authCtx = useContext(AuthContext);
+
 
     const navigator = useNavigate();
 
@@ -14,8 +17,7 @@ const Login = () => {
         e.preventDefault();
 
         if (email == "admin@gmail.com" && pwd == "123") {
-            localStorage.setItem("isLogin", "yes");
-
+            authCtx.setIsLogin(true);
             navigator("/dashboard");
         } else {
             setError("incorrect credentials");

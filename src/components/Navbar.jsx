@@ -1,9 +1,16 @@
 
 
-import React from 'react'
+import { useContext } from 'react'
 import { Link } from 'react-router-dom'
+import AuthContext from '../context/AuthContext'
 
 function Navbar() {
+
+    const authCtx = useContext(AuthContext);
+
+    // console.log(authCtx)
+
+
     return (
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
             <div className="container-fluid">
@@ -43,16 +50,18 @@ function Navbar() {
                                 Profile
                             </Link>
                         </li>
-                        <li className="nav-item">
+                       {
+                        (authCtx.login == false) ?  <li className="nav-item">
                             <Link to="/login" className="nav-link">
                                 Login
                             </Link>
-                        </li>
-                        <li className="nav-item">
+                        </li> :  <li className="nav-item">
                             <Link to="/logout" className="nav-link">
                                 Logout
                             </Link>
                         </li>
+                       }
+                       
                     </ul>
                     <form className="d-flex" role="search">
                         <input

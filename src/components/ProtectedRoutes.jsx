@@ -1,16 +1,20 @@
-import { useEffect } from "react";
+import { useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 
 
+import AuthContext from "../context/AuthContext";
+
 function ProtectedRoutes({ children }) {
+
+    const auhtCtx = useContext(AuthContext);
 
     const navigator = useNavigate();
 
     useEffect(() => {
 
-        let isLogin = localStorage.getItem("isLogin");
+    
 
-        if (isLogin == null || isLogin != "yes") {
+        if (auhtCtx.login == false) {
 
             navigator("/login")
 

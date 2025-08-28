@@ -1,14 +1,18 @@
 
 
-import React, { useEffect } from 'react'
+import { useEffect, useContext } from 'react'
 import { useNavigate } from 'react-router-dom';
 
+import AuthContext from '../context/AuthContext';
+
 const Logout = () => {
+
+    const authCtx = useContext(AuthContext);
 
     const navigate = useNavigate();
 
     useEffect(() => {
-        localStorage.removeItem("isLogin");
+        authCtx.setIsLogin(false);
         navigate("/login");
     }, [])
 }

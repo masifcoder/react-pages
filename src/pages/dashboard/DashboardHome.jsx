@@ -1,8 +1,14 @@
-import React from 'react'
+import {useContext} from 'react'
+import AuthContext from '../../context/AuthContext'
+
+
 
 const DashboardHome = () => {
+
+  const authCtx = useContext(AuthContext);
+
   return (
-    <div>DashboardHome</div>
+    <div>Welcome {authCtx.name}</div>
   )
 }
 

@@ -21,3 +21,32 @@ export default defineConfig({
 
 /* src/index.css */
 @import "tailwindcss";
+
+
+
+///////////////  Tailwindcss 3 for React 18 ////////////////////
+1. npm install tailwindcss@3 postcss autoprefixer
+2. npx tailwindcss init -p
+3. tailwindcss.config.js put this code
+
+// tailwind.config.js
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+
+4. index.css put this
+ @tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
